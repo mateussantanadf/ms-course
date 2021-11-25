@@ -25,7 +25,7 @@ public class WorkerResource {
 	
 	@Value("${test.config}")
 	private String testConfig;
-	
+
 	@Autowired
 	private Environment env;
 	
