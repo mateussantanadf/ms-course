@@ -1,0 +1,195 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for Failed to commit area from 0x0000000700c00000 to 0x0000000710c00000 of length 268435456.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (t:/workspace/open/src/hotspot/os/windows/os_windows.cpp:3269), pid=22512, tid=20048
+#
+# JRE version:  (11.0.2+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.2+9, mixed mode, aot, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58381 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=hr-payroll -Dfile.encoding=UTF-8 com.mateus.hrpayroll.HrPayrollApplication
+
+Host: AMD Ryzen 5 2600 Six-Core Processor            , 12 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1348)
+Time: Fri Dec  3 21:11:40 2021 Hora oficial do Brasil elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002e0ef7c3000):  JavaThread "Unknown thread" [_thread_in_vm, id=20048, stack(0x000000e224700000,0x000000e224800000)]
+
+Stack: [0x000000e224700000,0x000000e224800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x63489a]
+V  [jvm.dll+0x771f9f]
+V  [jvm.dll+0x773648]
+V  [jvm.dll+0x773d03]
+V  [jvm.dll+0x25eba8]
+V  [jvm.dll+0x631d3a]
+V  [jvm.dll+0x626775]
+V  [jvm.dll+0x313ffc]
+V  [jvm.dll+0x313e82]
+V  [jvm.dll+0x3196e6]
+V  [jvm.dll+0x36579f]
+V  [jvm.dll+0x3651c0]
+V  [jvm.dll+0x2f0ff8]
+V  [jvm.dll+0x2f2156]
+V  [jvm.dll+0x74b4f7]
+V  [jvm.dll+0x74cc3f]
+V  [jvm.dll+0x372609]
+V  [jvm.dll+0x731b69]
+V  [jvm.dll+0x3e1bad]
+V  [jvm.dll+0x3e3e81]
+C  [javaw.exe+0x3617]
+C  [javaw.exe+0x17a6c]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002e0ed6032c0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002e0ef7d9800 GCTaskThread "GC Thread#0" [stack: 0x000000e224800000,0x000000e224900000] [id=17840]
+  0x000002e0ef838000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000e224900000,0x000000e224a00000] [id=22028]
+  0x000002e0ef83d800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000e224a00000,0x000000e224b00000] [id=10496]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb5ac2f5b7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002e0ef7c1d90] Heap_lock - owner thread: 0x000002e0ef7c3000
+
+Heap address: 0x0000000700c00000, size: 4084 MB, Compressed Oops mode: Non-zero based: 0x0000000700c00000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff65ff20000 - 0x00007ff65ff65000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\javaw.exe
+0x00007ffbc47d0000 - 0x00007ffbc49c5000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007ffbbf650000 - 0x00007ffbbf666000 	C:\Program Files\Avast Software\Avast\aswhook.dll
+0x00007ffbc28b0000 - 0x00007ffbc296e000 	C:\windows\System32\KERNEL32.DLL
+0x00007ffbc2410000 - 0x00007ffbc26d8000 	C:\windows\System32\KERNELBASE.dll
+0x00007ffbc2990000 - 0x00007ffbc2b31000 	C:\windows\System32\USER32.dll
+0x00007ffbc23e0000 - 0x00007ffbc2402000 	C:\windows\System32\win32u.dll
+0x00007ffbc40e0000 - 0x00007ffbc410b000 	C:\windows\System32\GDI32.dll
+0x00007ffbc21d0000 - 0x00007ffbc22db000 	C:\windows\System32\gdi32full.dll
+0x00007ffbc20a0000 - 0x00007ffbc213d000 	C:\windows\System32\msvcp_win.dll
+0x00007ffbc22e0000 - 0x00007ffbc23e0000 	C:\windows\System32\ucrtbase.dll
+0x00007ffbae7d0000 - 0x00007ffbaea6a000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffbc2cf0000 - 0x00007ffbc2d8e000 	C:\windows\System32\msvcrt.dll
+0x00007ffbc3c00000 - 0x00007ffbc3c30000 	C:\windows\System32\IMM32.DLL
+0x00007ffbb3be0000 - 0x00007ffbb3bf6000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\vcruntime140.dll
+0x00007ffb8e760000 - 0x00007ffb8e80a000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\msvcp140.dll
+0x00007ffb5a930000 - 0x00007ffb5b453000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\server\jvm.dll
+0x00007ffbc3230000 - 0x00007ffbc32dc000 	C:\windows\System32\ADVAPI32.dll
+0x00007ffbc3c30000 - 0x00007ffbc3ccb000 	C:\windows\System32\sechost.dll
+0x00007ffbc3fb0000 - 0x00007ffbc40da000 	C:\windows\System32\RPCRT4.dll
+0x00007ffbc2d90000 - 0x00007ffbc2d98000 	C:\windows\System32\PSAPI.DLL
+0x00007ffba7af0000 - 0x00007ffba7af9000 	C:\windows\SYSTEM32\WSOCK32.dll
+0x00007ffbb3730000 - 0x00007ffbb3757000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007ffbbb5d0000 - 0x00007ffbbb5da000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007ffbc32e0000 - 0x00007ffbc334b000 	C:\windows\System32\WS2_32.dll
+0x00007ffbbfdd0000 - 0x00007ffbbfde2000 	C:\windows\SYSTEM32\kernel.appcore.dll
+0x00007ffbb8310000 - 0x00007ffbb8321000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\verify.dll
+0x00007ffbba9d0000 - 0x00007ffbbabb4000 	C:\windows\SYSTEM32\DBGHELP.DLL
+0x00007ffbba650000 - 0x00007ffbba67c000 	C:\windows\SYSTEM32\dbgcore.DLL
+0x00007ffbc2140000 - 0x00007ffbc21c3000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007ffbb4b00000 - 0x00007ffbb4b28000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\java.dll
+0x00007ffbb78a0000 - 0x00007ffbb78b6000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\zip.dll
+0x00007ffbbf9a0000 - 0x00007ffbbf9aa000 	C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\jimage.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin;C:\windows\SYSTEM32;C:\Program Files\Avast Software\Avast;C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\Mateus\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=58381 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=hr-payroll -Dfile.encoding=UTF-8 
+java_command: com.mateus.hrpayroll.HrPayrollApplication
+java_class_path (initial): C:\Users\Mateus\eclipse-workspace-CursoUdemy-Microsserviços\hr-payroll\target\classes;C:\Users\Mateus\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.3.4.RELEASE\spring-boot-starter-web-2.3.4.RELEASE.jar;C:\Users\Mateus\.m2\repository\org\springframework\boot\spring-boot-starter\2.3.4.RELEASE\spring-boot-starter-2.3.4.RELEASE.jar;C:\Users\Mateus\.m2\repository\org\springframework\boot\spring-boot\2.3.4.RELEASE\spring-boot-2.3.4.RELEASE.jar;C:\Users\Mateus\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.3.4.RELEASE\spring-boot-autoconfigure-2.3.4.RELEASE.jar;C:\Users\Mateus\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.3.4.RELEASE\spring-boot-starter-logging-2.3.4.RELEASE.jar;C:\Users\Mateus\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Mateus\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Mateus\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.13.3\log4j-to-slf4j-2.13.3.jar;C:\Users\Mateus\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar;C:\Users\Mateus\.m2\repository\org\slf4j\jul-to-slf4j\1.7.30\jul-to-slf4j-1.7.30.jar;C:\Users\Mateus\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\Mateus\.m2\repository\org\yaml\snakeyaml\1.26\snakeyaml-1.26.jar;C:\Users\Mateus\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.3.4.RELEASE\spring-boot-starter-json-2.3.4.RELEASE.jar;C:\Users\Mateus\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.11.2\jackson-databind-2.11.2.jar;C:\Users\Mateus\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.11.2\jackson-datatype-jdk8-2.11.2.jar;C:\Users\Mateus\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.11.2\jackson-datatype-jsr310-2.11.2.jar;C:\Users\Mateus\.m2\repository\com\fasterxml\jackson\module\jackson-module
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4282384384                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 7549744                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 244108496                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_111
+PATH=C:/Users/Mateus/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835/jre/bin/server;C:/Users/Mateus/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_11.0.2.v20200815-0835/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\maven\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Mateus\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Mateus\AppData\Local\Programs\Python\Python310\;C:\Users\Mateus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Mateus\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Mateus\AppData\Roaming\npm;C:\windows\System32;
+USERNAME=Mateus
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1348)
+
+CPU:total 12 (initial active 12) (12 cores per cpu, 2 threads per core) family 23 model 8 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, ht, tsc, tscinvbit, tscinv, bmi1, bmi2, adx, sha, fma
+
+Memory: 4k page, system-wide physical 16331M (1566M free)
+TotalPageFile size 20997M (AvailPageFile size 47M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 62M, peak: 318M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.2+9) for windows-amd64 JRE (11.0.2+9), built on Jan 18 2019 05:23:22 by "mach5one" with MS VC++ 15.5 (VS2017)
+
+END.
